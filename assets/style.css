@@ -1,13 +1,27 @@
 @charset "UTF-8";
 /* Reset CSS léger */
 /* Remise à zéro des marges et des rembourrages */
-body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote {
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote {
   margin: 0;
   padding: 0;
 }
 
 /* Remise à zéro des bordures */
-img, iframe, embed, object, video {
+img,
+iframe,
+embed,
+object,
+video {
   border: 0;
 }
 
@@ -18,7 +32,8 @@ body {
 }
 
 /* Remise à zéro des styles de liste */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -29,7 +44,10 @@ a {
 }
 
 /* Remise à zéro de la taille de la boîte de saisie de formulaire */
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-size: inherit;
   font-family: inherit;
 }
@@ -125,6 +143,11 @@ header {
   padding: 14px;
   border-radius: 30px;
   background-image: linear-gradient(#ff79da, #9356dc);
+  transition-property: transform;
+  transition-duration: 400ms;
+}
+.intro__btn:hover {
+  transform: scale(1.15);
 }
 
 .intro__btn--text {
@@ -153,10 +176,27 @@ header {
   background-color: #f6f6f6;
   width: 90%;
   border-radius: 15px;
-  display: flex;
-  gap: 17px;
   padding: 17px 0;
   box-shadow: 0px 5px 15px -13px;
+  transition-property: transform;
+  transition-duration: 400ms;
+}
+.process__card:hover {
+  transform: scale(1.05);
+}
+
+.process__card i {
+  color: #7e7e7e;
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+.process__card i:hover {
+  color: #9356dc;
+}
+
+.process__card--btn {
+  display: flex;
+  gap: 17px;
 }
 
 .process__card--number {
@@ -183,14 +223,14 @@ header {
   background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
-  padding: 25px 15px;
-  gap: 15px;
+  padding: 35px 30px;
+  gap: 25px;
 }
 
 .restaurant__content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .restaurant__card {
@@ -198,13 +238,20 @@ header {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 2px 15px 0px #7e7e7e;
+  transition-property: transform;
+  transition-duration: 400ms;
+}
+.restaurant__card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 5px 15px 2px #7e7e7e;
 }
 
 .restaurant__card--img {
   object-fit: cover;
   width: 100%;
   border-radius: 15px 15px 0px 0px;
-  height: 124px;
+  height: 150px;
 }
 
 .restaurant__card--badge {
@@ -218,13 +265,21 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 6%;
+  right: 12%;
 }
 
 .restaurant__card--content {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.restaurant__card--text {
+  display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 0;
   gap: 5px;
 }
 
@@ -238,6 +293,16 @@ header {
   font-weight: 300;
 }
 
+.restaurant__card--like .fa-regular {
+  color: #101010;
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+.restaurant__card--like .fa-regular:active {
+  color: linear-gradient(#ff79da, #9356dc);
+}
+
+/**** Footer ****/
 .footer {
   display: flex;
   flex-direction: column;
