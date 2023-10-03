@@ -378,9 +378,9 @@ header {
     .footer {
         display: flex;
         flex-direction: row-reverse;
-        align-items: flex-end;
-        padding: 25px 30px 20px;
-        gap: 40px;
+        align-items: center;
+        padding: 20px 30px 20px;
+        gap: 55px;
     }
 
     .footer__list {
