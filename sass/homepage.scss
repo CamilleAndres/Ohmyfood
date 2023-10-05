@@ -297,6 +297,8 @@ header {
     .fa-regular {
         transition-property: transform;
         transition-duration: 300ms;
+        display: flex;
+        z-index: 1;
 
         &:hover {
             opacity: 0;
@@ -307,6 +309,9 @@ header {
         opacity: 0;
         transition-property: transform;
         transition-duration: 300ms;
+        background-image: linear-gradient(#ff79da, #9356dc);
+        display: flex;
+        z-index: 1;
 
         &:hover {
             opacity: 1;
