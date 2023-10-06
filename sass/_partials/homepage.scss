@@ -72,8 +72,10 @@ button {
 }
 
 body {
+    max-width: 1440px;
     display: block;
     justify-content: center;
+    margin: 0 auto;
 }
 
 /******* Header *******/
@@ -184,10 +186,10 @@ header {
 
 .process__card {
     background-color: #f6f6f6;
-    width: 90%;
     border-radius: 15px;
     padding: 17px 0;
     box-shadow: 0px 5px 15px -13px;
+    width: 100%;
 }
 
 .process__card--btn {
@@ -295,23 +297,22 @@ header {
     bottom: 25px;
 
     .fa-regular {
-        transition-property: transform;
-        transition-duration: 300ms;
-        display: flex;
-        z-index: 1;
-
-        &:hover {
-            opacity: 0;
-        }
+        font-size: 25px;
+        position: absolute;
+        top: -20px;
+        right: 10px;
     }
 
     .fa-solid {
         opacity: 0;
-        transition-property: transform;
-        transition-duration: 300ms;
-        background-image: linear-gradient(#ff79da, #9356dc);
-        display: flex;
-        z-index: 1;
+        font-size: 25px;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(#9356DC, #FF79DA);
+        -webkit-text-fill-color: transparent;
+        transition: opacity 0.7s ease-in-out;
+        position: absolute;
+        top: -20px;
+        right: 10px;
 
         &:hover {
             opacity: 1;
@@ -350,7 +351,7 @@ header {
 /*** Desktop ***/
 @media (min-width: 1024px) {
     .process {
-        padding: 30px 60px;
+        padding: 45px 10%;
         justify-content: center;
     }
 
@@ -367,13 +368,13 @@ header {
     }
 
     .restaurants {
-        padding: 35px 60px;
+        padding: 45px 10%;
     }
 
     .restaurant__content {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        grid-gap: 50px;
+        grid-gap: 50px 80px;
     }
 
     .restaurant__card--img {
