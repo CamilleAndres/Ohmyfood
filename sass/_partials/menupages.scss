@@ -7,6 +7,7 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
+    height: 65px;
 }
 
 .back__btn {
@@ -47,15 +48,10 @@ header {
 }
 
 .menu__like {
-    position: absolute;
-    right: 20px;
-    top: 45px;
+    position: relative;
 
     .fa-regular {
         font-size: 25px;
-        position: absolute;
-        top: -20px;
-        right: 10px;
     }
 
     .fa-solid {
@@ -67,8 +63,8 @@ header {
         -webkit-text-fill-color: transparent;
         transition: opacity 0.7s ease-in-out;
         position: absolute;
-        top: -20px;
-        right: 10px;
+        top: 0px;
+        right: 0px;
 
         &:hover {
             opacity: 1;
@@ -109,9 +105,35 @@ header {
 .menu__list {
     display: flex;
     flex-direction: row;
+    animation: cardAppear 1s;
+    animation-timing-function: cubic-bezier(0.5, 1.5,.8,.9);
+}
+
+.menu__list:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.menu__list:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.menu__list:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes cardAppear {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .menu__card {
+    display: flex;
+    justify-content: space-between;
     background-color: white;
     border-radius: 15px;
     padding: 10px;
@@ -120,13 +142,9 @@ header {
     width: 100%;
     transition: transform 0ms;
 
-    &:hover {
-        border-radius: 15px 0 0 15px;
-    }
-
-    &:hover + .menu__card--selecteur {
-        width: 70px;
+    &:hover .menu__card--selecteur {
         opacity: 1;
+        width: 70px;
     }
 }
 
@@ -134,7 +152,7 @@ header {
     background-color: #99e2d0;
     color: white;
     font-size: 25px;
-    height: auto;
+    height: 100%;
     width: 0;
     opacity: 0;
     border-radius: 0 15px 15px 0;
@@ -142,6 +160,9 @@ header {
     align-items: center;
     justify-content: center;
     transition: all 400ms ease-in-out;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 .menu__card h3 {
@@ -155,15 +176,14 @@ header {
 }
 
 .menu__card--btn {
-    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu__card span {
     font-weight: 700;
     font-size: 15px;
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .menu__btn {
