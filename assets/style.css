@@ -86,11 +86,18 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: loaderSpinner 3s ease-in-out both;
 }
 
+@keyframes loaderSpinner {
+  100% {
+    display: none;
+  }
+}
 .loader__container {
   display: flex;
   flex-direction: row;
@@ -474,6 +481,7 @@ header {
 /***** Menu *****/
 .menu__banner img {
   width: 100%;
+  height: 230px;
   object-fit: cover;
 }
 
@@ -486,7 +494,7 @@ header {
 
 .menu__title {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
@@ -525,8 +533,30 @@ header {
   flex-direction: column;
   padding: 15px;
   gap: 30px;
+  animation: menuAppear 1.5s;
+  animation-timing-function: ease-in-out;
 }
 
+.menu__container:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.menu__container:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.menu__container:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes menuAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .menu__container--title {
   font-weight: 300;
   font-size: 16px;
@@ -552,22 +582,20 @@ header {
 
 .menu__list {
   display: flex;
-  flex-direction: row;
-  position: relative;
-  animation: cardAppear 1s;
+  animation: cardAppear 2s;
   animation-timing-function: cubic-bezier(0.5, 1.5, 0.8, 0.9);
 }
 
 .menu__list:nth-child(1) {
-  animation-delay: 0s;
+  animation-delay: 0.1s;
 }
 
 .menu__list:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
 }
 
 .menu__list:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: 0.5s;
 }
 
 @keyframes cardAppear {
@@ -581,19 +609,23 @@ header {
 .menu__card--btn {
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
   box-shadow: 0px 5px 15px -13px;
   width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .menu__card {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  align-items: flex-end;
 }
-.menu__card:hover + .menu__card--selecteur {
-  opacity: 1;
-  width: 70px;
+
+.menu__card--text {
+  text-overflow: ellipsis;
 }
 
 .menu__card--selecteur {
@@ -601,18 +633,31 @@ header {
   color: white;
   font-size: 25px;
   height: 100%;
-  width: 0;
+  width: 70px;
+  margin-right: -70px;
   opacity: 0;
   border-radius: 0 15px 15px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 400ms ease-in-out;
-  position: absolute;
-  right: 0px;
-  top: 0px;
+}
+.menu__card--selecteur:hover + .menu__card {
+  animation: selectAppear 1s linear both;
 }
 
+@keyframes selectAppear {
+  0% {
+    margin-right: -70px;
+  }
+  50% {
+    opacity: 0, 5;
+    margin-right: -35px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0px;
+  }
+}
 .menu__card h3 {
   font-weight: 500;
   font-size: 18px;
@@ -626,9 +671,6 @@ header {
 .menu__card span {
   font-weight: 700;
   font-size: 15px;
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
 }
 
 /****** btnCommand ******/
