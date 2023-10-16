@@ -598,6 +598,10 @@ header {
   animation-delay: 0.5s;
 }
 
+.menu__list:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
 @keyframes cardAppear {
   0% {
     transform: scale(0);
@@ -622,9 +626,23 @@ header {
   padding: 10px;
   width: 100%;
   align-items: flex-end;
+  overflow: hidden;
+}
+.menu__card:hover + .menu__card--selecteur {
+  animation: selectAppear 0.5s linear 0s alternate forwards;
 }
 
+@keyframes selectAppear {
+  0% {
+    margin-right: -70px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
 .menu__card--text {
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -635,37 +653,22 @@ header {
   height: 100%;
   width: 70px;
   margin-right: -70px;
-  opacity: 0;
   border-radius: 0 15px 15px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.menu__card--selecteur:hover + .menu__card {
-  animation: selectAppear 1s linear both;
-}
 
-@keyframes selectAppear {
-  0% {
-    margin-right: -70px;
-  }
-  50% {
-    opacity: 0, 5;
-    margin-right: -35px;
-  }
-  100% {
-    opacity: 1;
-    margin-right: 0px;
-  }
-}
 .menu__card h3 {
   font-weight: 500;
   font-size: 18px;
+  text-overflow: ellipsis;
 }
 
 .menu__card p {
   font-weight: 300;
   font-size: 15px;
+  text-overflow: ellipsis;
 }
 
 .menu__card span {
