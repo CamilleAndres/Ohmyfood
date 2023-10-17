@@ -193,6 +193,7 @@ header {
 }
 
 .menu__card--text {
+    display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -214,13 +215,11 @@ header {
 .menu__card h3 {
     font-weight: 500;
     font-size: 18px;
-    text-overflow: ellipsis;
 }
 
 .menu__card p {
     font-weight: 300;
     font-size: 15px;
-    text-overflow: ellipsis;
 }
 
 .menu__card span {
