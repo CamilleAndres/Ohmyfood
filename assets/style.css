@@ -629,22 +629,11 @@ header {
   overflow: hidden;
 }
 .menu__card:hover + .menu__card--selecteur {
-  animation: selectAppear 0.5s linear 0s alternate forwards;
+  margin-right: 0;
 }
 
-@keyframes selectAppear {
-  0% {
-    margin-right: -70px;
-  }
-  100% {
-    margin-right: 0;
-  }
-}
 .menu__card--text {
-  display: block;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .menu__card--selecteur {
@@ -658,16 +647,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: margin-right 0.5s ease-in-out;
 }
 
 .menu__card h3 {
   font-weight: 500;
   font-size: 18px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu__card p {
   font-weight: 300;
   font-size: 15px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu__card span {
