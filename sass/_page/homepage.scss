@@ -1,169 +1,7 @@
-/* Reset CSS léger */
-
-/* Remise à zéro des marges et des rembourrages */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote {
-    margin: 0;
-    padding: 0;
-}
-
-/* Remise à zéro des bordures */
-img,
-iframe,
-embed,
-object,
-video {
-    border: 0;
-}
-
-/* Remise à zéro de la taille de police et de la famille de police */
-body {
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-}
-
-/* Remise à zéro des styles de liste */
-ul,
-ol {
-    list-style: none;
-}
-
-/* Remise à zéro des styles de lien */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Remise à zéro de la taille de la boîte de saisie de formulaire */
-input,
-textarea,
-button,
-select {
-    font-size: inherit;
-    font-family: inherit;
-}
-
-/* Remise à zéro des styles de bouton */
-button {
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    background: none;
-}
-
-/******* General ********/
-* {
-    font-family: 'roboto';
-    box-sizing: border-box;
-}
-
-:root {
-    --main-color: #101010;
-    --main-bg-color: #f6f6f6;
-}
-
-body {
-    max-width: 1470px;
-    display: block;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-}
-
-/******* Loader *******/
-
-.loader {
-    backdrop-filter: brightness(0.5);
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: loaderSpinner 3s ease-in-out both;
-}
-
-@keyframes loaderSpinner {
-    100% {
-        display: none;
-    }
-}
-
-.loader__container {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.loader__container--item1 {
-    background-color: #9356DC;
-    border-radius: 50px;
-    width: 20px;
-    height: 20px;
-    transform: scale(1);
-    animation: fadinout 1s ease-in-out 0ms infinite alternate-reverse;
-}
-
-.loader__container--item2 {
-    background-color: #99E2D0;
-    border-radius: 50px;
-    width: 20px;
-    height: 20px;
-    transform: scale(1);
-    animation: fadinout 1s ease-in-out 200ms infinite alternate-reverse;
-}
-
-.loader__container--item3 {
-    background-color: #FF79DA;
-    border-radius: 50px;
-    width: 20px;
-    height: 20px;
-    transform: scale(1);
-    animation: fadinout 1s ease-in-out 400ms infinite alternate-reverse;
-}
-
-@keyframes fadinout {
-    0% {
-        opacity: 10%;
-        transform: scale(1.1);
-    }
-
-    20% {
-        opacity: 20%;
-        transform: scale(1.2);
-    }
-
-    40% {
-        opacity: 40%;
-        transform: scale(1.3);
-    }
-
-    60% {
-        opacity: 60%;
-        transform: scale(1.4);
-    }
-
-    80% {
-        opacity: 80%;
-        transform: scale(1.5);
-    }
-
-    100% {
-        opacity: 100%;
-        transform: scale(1.6);
-    }
-}
+@import "../_partials/mixins";
+@import "../_partials/base";
+@import "../_partials/reset";
+@import "../_partials/variables";
 
 /******* Header *******/
 
@@ -171,19 +9,17 @@ header {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    @include align-about;
 }
 
 .header__logo {
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 12px;
     margin-top: 7px;
     width: 100%;
     box-shadow: 0px 5px 11px -8px;
     z-index: 1;
+    @include align-about;
 }
 
 .header__logo--img {
@@ -194,9 +30,8 @@ header {
     background-color: #EAEAEA;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
+    @include align-about;
 }
 
 .header__location input {
@@ -211,18 +46,15 @@ header {
     padding: 10px;
 }
 
-/****** Main ******/
 /*** Intro ***/
 
 .intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    background-color: #f3f3f3;
+    background-color: $light-grey;
     padding: 30px 50px;
     gap: 35px;
+    @include flex-about(column);
+    @include align-about;
 }
 
 .intro__description {
@@ -230,16 +62,7 @@ header {
 }
 
 .intro__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 190px;
-    padding: 14px;
-    border-radius: 30px;
-    background-image: linear-gradient(#ff79da, #9356dc);
-    box-shadow: 0px 1px 5px 0px #7e7e7e;
-    transition: transform 400ms ease-in-out;
-
+    @include btn-about;
     &:hover {
         transform: scale(1.15);
         filter: brightness(1.15);
@@ -256,22 +79,20 @@ header {
 /*** Fonctionnement ***/
 
 .process {
-    display: flex;
-    flex-direction: column;
     padding: 35px 30px;
     gap: 25px;
+    @include flex-about(column);
 }
 
 .process__content {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
+    @include flex-about(column);
 }
 
 .process__card {
-    background-color: #f6f6f6;
+    background-color: $light-grey;
     border-radius: 15px;
     padding: 17px 0;
     box-shadow: 0px 5px 15px -13px;
@@ -288,13 +109,12 @@ header {
     font-size: 15px;
     font-weight: 300;
     width: 18px;
-    background-color: #9356dc;
+    background-color: $color-primary;
     border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     left: -9px;
+    @include flex-about(column);
+    @include align-about;
 }
 
 .process__card--text {
@@ -305,11 +125,10 @@ header {
 /*** Restaurants ***/
 
 .restaurants {
-    background-color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
+    background-color: $light-grey;
     padding: 35px 30px;
     gap: 25px;
+    @include flex-about(column);
 }
 
 .restaurant__card--content {
@@ -317,16 +136,14 @@ header {
 }
 
 .restaurant__content {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
+    @include flex-about(column);
 }
 
 .restaurant__card {
     background-color: white;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
+    @include flex-about(column);
     box-shadow: 0px 1px 5px 0px #7e7e7e;
     transition-property: transform;
     transition-duration: 400ms;
@@ -353,16 +170,14 @@ header {
     width: 65px;
     height: 25px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     right: 20px;
     top: 15px;
+    @include align-about;
 }
 
 .restaurant__card--text {
-    display: flex;
-    flex-direction: column;
+    @include flex-about(column);
     padding: 10px;
     gap: 5px;
 }
@@ -394,7 +209,7 @@ header {
         font-size: 25px;
         background-clip: border-box;
         -webkit-background-clip: text;
-        background-image: linear-gradient(#9356DC, #FF79DA);
+        background-image: linear-gradient($color-primary, $color-secondary);
         -webkit-text-fill-color: transparent;
         transition: opacity 0.7s ease-in-out;
         position: absolute;
@@ -410,8 +225,7 @@ header {
 /**** Footer ****/
 
 .footer {
-    display: flex;
-    flex-direction: column;
+    @include flex-about(column);
     background-color: #353535;
     color: white;
     padding: 20px;
@@ -424,8 +238,7 @@ header {
 }
 
 .footer__list {
-    display: flex;
-    flex-direction: column;
+    @include flex-about(column);
     gap: 5px;
     font-weight: 300;
 }
@@ -443,9 +256,8 @@ header {
     }
 
     .process__content {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include flex-about(row);
+        @include align-about;
         gap: 35px;
     }
 
@@ -469,16 +281,14 @@ header {
     }
 
     .footer {
-        display: flex;
-        flex-direction: row-reverse;
+        @include flex-about(row-reverse);
         align-items: center;
         padding: 20px 30px 20px;
         gap: 55px;
     }
 
     .footer__list {
-        display: flex;
-        flex-direction: row;
+        @include flex-about(row);
         gap: 25px;
     }
 

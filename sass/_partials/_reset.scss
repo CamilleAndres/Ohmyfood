@@ -1,0 +1,61 @@
+/* Reset CSS léger */
+
+/* Remise à zéro des marges et des rembourrages */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remise à zéro des bordures */
+img,
+iframe,
+embed,
+object,
+video {
+    border: 0;
+}
+
+/* Remise à zéro de la taille de police et de la famille de police */
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Remise à zéro des styles de liste */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remise à zéro des styles de lien */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remise à zéro de la taille de la boîte de saisie de formulaire */
+input,
+textarea,
+button,
+select {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+/* Remise à zéro des styles de bouton */
+button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+}
